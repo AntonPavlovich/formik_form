@@ -1,6 +1,7 @@
 import React from "react";
-import { Field } from "formik";
+import { ErrorMessage, Field } from "formik";
 import styles from "./JoinAsButtons.module.scss";
+import ErrMessage from "../ErrMessage";
 
 const JoinAsButtons = (props) => {
   const { name } = props;
@@ -26,6 +27,10 @@ const JoinAsButtons = (props) => {
           </p>
         </div>
       </label>
+      <ErrorMessage
+        name={name}
+        render={(msg) => <ErrMessage setIsError={() => {}} message={msg} />}
+      />
     </div>
   );
 };
