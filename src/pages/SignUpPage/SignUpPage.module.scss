@@ -5,6 +5,7 @@
 }
 
 .signup_section {
+  font-family: $font_family;
   @extend %for_form_wrappers;
 }
 
@@ -12,7 +13,7 @@
   margin: 0 110px;
 }
 .caption {
-  font-family: $font_family;
+  
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -25,4 +26,25 @@
 .row {
   display: flex;
   justify-content: space-between;
+}
+
+.createAccountBtn {
+  padding: 15px 0;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background-color: rgb(97, 210, 208);
+  border: none;
+  cursor: pointer;
+  transition: background-color $transition_speed;
+  margin-bottom: 20px;
+  &:hover {
+    background-color:rgb(73, 168, 167);
+  }
+}
+.termOfServiceLink{
+  transition: color $transition_speed;
+  &:hover {
+    color:rgb(184, 190, 204);
+  }
 }

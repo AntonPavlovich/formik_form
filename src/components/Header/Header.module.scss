@@ -24,7 +24,7 @@
   font-size: 18px;
   font-weight: bolder;
 
-  transition: background-color ease-in-out 0.3s;
+  transition: background-color $transition_speed;
   &:hover {
     background-color: rgba(230, 230, 225, 0.425);
   }

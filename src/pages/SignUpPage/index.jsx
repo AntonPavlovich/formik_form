@@ -2,10 +2,10 @@ import React from "react";
 import Header from "../../components/Header";
 import styles from "./SignUpPage.module.scss";
 
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import signUpSchema from "./../../schemas/signUpSchema";
 import JoinAsButtons from "../../components/JoinAsButtons";
-import ErrMessage from "../../components/ErrMessage";
+import FieldWithValidation from "../../components/FieldWithValidation";
 
 const initialValues = {
   firstName: "",
@@ -42,50 +42,42 @@ const SignUpPage = (props) => {
         >
           <Form className={styles.form}>
             <div className={styles.row}>
-              <Field
-                name="firstName"
-                placeholder="First name"
-                className={styles.input}
-              />
-              <ErrorMessage
-                name="firstName"
-                render={(msg) => <ErrMessage msg={msg} />}
-              />
-              <Field
-                name="lastName"
-                placeholder="Last name"
-                className={styles.input}
-              />
+              <FieldWithValidation name="firstName" placeholder="First name" />
+              <FieldWithValidation name="lastName" placeholder="Last name" />
             </div>
+
             <div className={styles.row}>
-              <Field
+              <FieldWithValidation
                 name="displayName"
                 placeholder="Display name"
-                className={styles.input}
               />
-              <Field
-                name="email"
-                placeholder="Email address"
-                className={styles.input}
-              />
+              <FieldWithValidation name="email" placeholder="Email address" />
             </div>
+
             <div className={styles.row}>
-              <Field
-                name="password"
-                placeholder="Password"
-                className={styles.input}
-              />
-              <Field
+              <FieldWithValidation name="password" placeholder="Password" />
+              <FieldWithValidation
                 name="confirmPassword"
                 placeholder="Confirm password"
-                className={styles.input}
               />
             </div>
             <JoinAsButtons name="joinAs" />
-
-            <button type="submit">Create account</button>
+            <button className={styles.createAccountBtn} type="submit">
+              Create account
+            </button>
           </Form>
         </Formik>
+        <p>
+          By clicking this button, you agree to our{" "}
+          <a
+            className={styles.termOfServiceLink}
+            href="https://www.squadhelp.com/Terms&Conditions"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Terms of Service.
+          </a>
+        </p>
       </section>
     </>
   );
