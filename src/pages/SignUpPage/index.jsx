@@ -2,8 +2,10 @@ import React from "react";
 import Header from "../../components/Header";
 import styles from "./SignUpPage.module.scss";
 
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import signUpSchema from "./../../schemas/signUpSchema";
 import JoinAsButtons from "../../components/JoinAsButtons";
+import ErrMessage from "../../components/ErrMessage";
 
 const initialValues = {
   firstName: "",
@@ -12,7 +14,7 @@ const initialValues = {
   email: "",
   password: "",
   confirmPassword: "",
-  joinAs : ''
+  joinAs: "",
 };
 
 const SignUpPage = (props) => {
@@ -33,13 +35,21 @@ const SignUpPage = (props) => {
           </p>
         </div>
 
-        <Formik initialValues={initialValues} onSubmit={submitHandler}>
+        <Formik
+          validationSchema={signUpSchema}
+          initialValues={initialValues}
+          onSubmit={submitHandler}
+        >
           <Form className={styles.form}>
-            <div className={styles.twoForms}>
+            <div className={styles.row}>
               <Field
                 name="firstName"
                 placeholder="First name"
                 className={styles.input}
+              />
+              <ErrorMessage
+                name="firstName"
+                render={(msg) => <ErrMessage msg={msg} />}
               />
               <Field
                 name="lastName"
@@ -47,7 +57,7 @@ const SignUpPage = (props) => {
                 className={styles.input}
               />
             </div>
-            <div className={styles.twoForms}>
+            <div className={styles.row}>
               <Field
                 name="displayName"
                 placeholder="Display name"
@@ -59,7 +69,7 @@ const SignUpPage = (props) => {
                 className={styles.input}
               />
             </div>
-            <div className={styles.twoForms}>
+            <div className={styles.row}>
               <Field
                 name="password"
                 placeholder="Password"
@@ -71,7 +81,7 @@ const SignUpPage = (props) => {
                 className={styles.input}
               />
             </div>
-            <JoinAsButtons />
+            <JoinAsButtons name="joinAs" />
 
             <button type="submit">Create account</button>
           </Form>
