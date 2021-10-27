@@ -1,11 +1,14 @@
 import React from 'react';
 import Header from '../../components/Header';
-
-const SignUpPage = () => {
+import styles from './SignUpPage.module.scss'
+const SignUpPage = (props) => {
   return (
-    <div>
+    <>
         <Header btnLinkTo='/login' btnText='Login'/>
-    </div>
+        <section className={styles.signup_section}>
+        <h1 className={styles.heading}>create an account</h1>
+      </section>
+    </>
   );
 }
 
