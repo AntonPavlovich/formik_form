@@ -19,7 +19,7 @@ const signUpSchema = yup.object().shape({
   password: yup
     .string()
     .matches(
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/,
       messages.passwordValidation
     )
     .required(messages.forRequired),
@@ -30,7 +30,7 @@ const signUpSchema = yup.object().shape({
     .required(messages.forRequired),
 
   joinAs: yup.string().required(messages.forRadioButtons),
-  
+
   allowOffer: yup.boolean(),
 });
 
