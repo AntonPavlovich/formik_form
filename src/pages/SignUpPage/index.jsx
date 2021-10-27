@@ -21,7 +21,6 @@ const initialValues = {
 
 const SignUpPage = (props) => {
   const submitHandler = (values, formikBag) => {
-    console.log(values);
 
     formikBag.resetForm();
   };

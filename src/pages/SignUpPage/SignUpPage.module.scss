@@ -29,18 +29,7 @@
 }
 
 .createAccountBtn {
-  padding: 15px 0;
-  outline: none;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  background-color: rgb(97, 210, 208);
-  border: none;
-  cursor: pointer;
-  transition: background-color $transition_speed;
-  margin-bottom: 20px;
-  &:hover {
-    background-color:rgb(73, 168, 167);
-  }
+  @extend %for_big_green_button;
 }
 .termOfServiceLink{
   transition: color $transition_speed;

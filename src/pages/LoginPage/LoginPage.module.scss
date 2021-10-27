@@ -7,3 +7,13 @@
 .login_section {
   @extend %for_form_wrappers;
 }
+
+.login_btn {
+  @extend %for_big_green_button;
+  width: 90%;
+}
+
+.login_input {
+  @extend %for_inputs;
+  width: 90%;
+}
