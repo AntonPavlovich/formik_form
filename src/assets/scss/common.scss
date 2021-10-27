@@ -1,10 +1,28 @@
+$font_family : sans-serif;
+
 %for_headings {
-  font-size: 30px;
+  font-size: 2.5rem;
   text-transform: uppercase;
   font-family: sans-serif;
+  margin-bottom: 1rem;
 }
 
 %for_form_wrappers{
   max-width: 700px;
-  margin: 0 auto;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.input {
+  background-color: white;
+  color : rgb(151, 148, 148);
+
+  width: 48%;
+  margin: 10px 0;
+  padding: 20px 20px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+
 }

@@ -7,6 +7,7 @@ const LoginPage = (props) => {
     <>
       <Header btnLinkTo='/sign_up' btnText='Signup'/>
       <section className={styles.login_section}>
+          
         <h1 className={styles.heading}>login to your account</h1>
       </section>
     </>

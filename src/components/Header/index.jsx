@@ -9,9 +9,9 @@ const Header = (props) => {
   const {btnLinkTo,btnText} = props;
   return (
     <nav className={styles.nav}>
-       <div>
+       <a href='https://www.squadhelp.com/' target='_blank' rel='noreferrer'>
          <img src={logo} alt="logo" />
-       </div>
+       </a>
         <Link className={styles.btn} to={btnLinkTo}>{btnText}</Link>
     </nav>
   );
