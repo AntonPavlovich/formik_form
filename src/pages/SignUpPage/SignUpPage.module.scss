@@ -1,0 +1,9 @@
+@import './../../assets/scss/common.scss';
+
+.heading {
+  @extend %for_headings;
+}
+
+.signup_section {
+  @extend %for_form_wrappers;
+}
