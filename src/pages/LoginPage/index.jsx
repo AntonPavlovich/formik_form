@@ -34,11 +34,11 @@ const LoginPage = (props) => {
               className={styles.login_input}
             />
             <ErrorMessage name="password" />
-          </Form>
-        </Formik>
         <button type="submit" className={styles.login_btn}>
           login
         </button>
+          </Form>
+        </Formik>
       </section>
     </>
   );
