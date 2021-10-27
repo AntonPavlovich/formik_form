@@ -26,10 +26,11 @@ const signUpSchema = yup.object().shape({
 
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref("password"), null], "Passwords must match"),
+    .oneOf([yup.ref("password"), null], "Passwords must match")
+    .required(messages.forRequired),
 
   joinAs: yup.string().required(messages.forRadioButtons),
-
+  
   allowOffer: yup.boolean(),
 });
 

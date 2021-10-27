@@ -2,10 +2,11 @@ import React from "react";
 import Header from "../../components/Header";
 import styles from "./SignUpPage.module.scss";
 
-import { Formik, Form, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import signUpSchema from "./../../schemas/signUpSchema";
 import JoinAsButtons from "../../components/JoinAsButtons";
 import FieldWithValidation from "../../components/FieldWithValidation";
+import AllowOfferBtn from "../../components/AllowOfferBtn";
 
 const initialValues = {
   firstName: "",
@@ -15,6 +16,7 @@ const initialValues = {
   password: "",
   confirmPassword: "",
   joinAs: "",
+  allowOffer: false,
 };
 
 const SignUpPage = (props) => {
@@ -40,32 +42,38 @@ const SignUpPage = (props) => {
           initialValues={initialValues}
           onSubmit={submitHandler}
         >
-          <Form className={styles.form}>
-            <div className={styles.row}>
-              <FieldWithValidation name="firstName" placeholder="First name" />
-              <FieldWithValidation name="lastName" placeholder="Last name" />
-            </div>
+          
+             <Form className={styles.form}>
+              <div className={styles.row}>
+                <FieldWithValidation
+                  name="firstName"
+                  placeholder="First name"
+                />
+                <FieldWithValidation name="lastName" placeholder="Last name" />
+              </div>
 
-            <div className={styles.row}>
-              <FieldWithValidation
-                name="displayName"
-                placeholder="Display name"
-              />
-              <FieldWithValidation name="email" placeholder="Email address" />
-            </div>
+              <div className={styles.row}>
+                <FieldWithValidation
+                  name="displayName"
+                  placeholder="Display name"
+                />
+                <FieldWithValidation name="email" placeholder="Email address" />
+              </div>
 
-            <div className={styles.row}>
-              <FieldWithValidation name="password" placeholder="Password" />
-              <FieldWithValidation
-                name="confirmPassword"
-                placeholder="Confirm password"
-              />
-            </div>
-            <JoinAsButtons name="joinAs" />
-            <button className={styles.createAccountBtn} type="submit">
-              Create account
-            </button>
-          </Form>
+              <div className={styles.row}>
+                <FieldWithValidation name="password" placeholder="Password" />
+                <FieldWithValidation
+                  name="confirmPassword"
+                  placeholder="Confirm password"
+                />
+              </div>
+
+              <JoinAsButtons name="joinAs" />
+              <AllowOfferBtn name="allowOffer" />
+              <button className={styles.createAccountBtn} type="submit">
+                Create account
+              </button>
+            </Form>
         </Formik>
         <p>
           By clicking this button, you agree to our{" "}
