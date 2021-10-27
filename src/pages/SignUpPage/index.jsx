@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from '../../components/Header';
 
 const SignUpPage = () => {
   return (
     <div>
-        SIGN UP PAGE
+        <Header btnLinkTo='/login' btnText='Login'/>
     </div>
   );
 }
