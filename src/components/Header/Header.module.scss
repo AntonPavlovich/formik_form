@@ -28,4 +28,7 @@
   &:hover {
     background-color: rgba(230, 230, 225, 0.425);
   }
+  &:active {
+    border: none;
+  }
 }
