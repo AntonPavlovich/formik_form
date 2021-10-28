@@ -7,6 +7,12 @@
   position: relative;
 }
 
+.inputWrapperLong{
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  position: relative;
+}
 
 .input {
   @extend %for_inputs;
