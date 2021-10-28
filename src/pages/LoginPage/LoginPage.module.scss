@@ -8,12 +8,17 @@
   @extend %for_form_wrappers;
 }
 
+.login_form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .login_btn {
   @extend %for_big_green_button;
-  width: 90%;
 }
 
 .login_input {
   @extend %for_inputs;
-  width: 90%;
 }

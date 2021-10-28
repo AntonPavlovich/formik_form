@@ -21,7 +21,6 @@ const initialValues = {
 
 const SignUpPage = (props) => {
   const submitHandler = (values, formikBag) => {
-
     formikBag.resetForm();
   };
 
@@ -41,38 +40,39 @@ const SignUpPage = (props) => {
           initialValues={initialValues}
           onSubmit={submitHandler}
         >
-          
-             <Form className={styles.form}>
-              <div className={styles.row}>
-                <FieldWithValidation
-                  name="firstName"
-                  placeholder="First name"
-                />
-                <FieldWithValidation name="lastName" placeholder="Last name" />
-              </div>
+          <Form className={styles.form}>
+            <div className={styles.row}>
+              <FieldWithValidation name="firstName" placeholder="First name" />
+              <FieldWithValidation name="lastName" placeholder="Last name" />
+            </div>
 
-              <div className={styles.row}>
-                <FieldWithValidation
-                  name="displayName"
-                  placeholder="Display name"
-                />
-                <FieldWithValidation name="email" placeholder="Email address" />
-              </div>
+            <div className={styles.row}>
+              <FieldWithValidation
+                name="displayName"
+                placeholder="Display name"
+              />
+              <FieldWithValidation name="email" placeholder="Email address" />
+            </div>
 
-              <div className={styles.row}>
-                <FieldWithValidation name="password" placeholder="Password" />
-                <FieldWithValidation
-                  name="confirmPassword"
-                  placeholder="Confirm password"
-                />
-              </div>
+            <div className={styles.row}>
+              <FieldWithValidation
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+              <FieldWithValidation
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm password"
+              />
+            </div>
 
-              <JoinAsButtons name="joinAs" />
-              <AllowOfferBtn name="allowOffer" />
-              <button className={styles.createAccountBtn} type="submit">
-                Create account
-              </button>
-            </Form>
+            <JoinAsButtons name="joinAs" />
+            <AllowOfferBtn name="allowOffer" />
+            <button className={styles.createAccountBtn} type="submit">
+              Create account
+            </button>
+          </Form>
         </Formik>
         <p>
           By clicking this button, you agree to our{" "}
