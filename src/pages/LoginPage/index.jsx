@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import Header from "../../components/Header";
+import ErrMessage from "./../../components/ErrMessage";
 
 import loginSchema from "../../schemas/loginSchema";
 import styles from "./LoginPage.module.scss";
@@ -28,15 +29,16 @@ const LoginPage = (props) => {
           <Form>
             <Field name="email" className={styles.login_input} />
             <ErrorMessage name="email" />
+
             <Field
               name="password"
               type="password"
               className={styles.login_input}
             />
             <ErrorMessage name="password" />
-        <button type="submit" className={styles.login_btn}>
-          login
-        </button>
+            <button type="submit" className={styles.login_btn}>
+              login
+            </button>
           </Form>
         </Formik>
       </section>
